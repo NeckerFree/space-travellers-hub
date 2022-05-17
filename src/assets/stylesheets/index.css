@@ -1,0 +1,30 @@
+.html {
+  font-size: 87.5%;
+  scroll-behavior: smooth;
+}
+
+.body {
+  position: relative;
+  background-color: rgb(240, 240, 240);
+}
+
+.offscreen {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.appwidth {
+  width: 85.7%;
+  max-width: 88.1485714rem;
+  margin: auto;
+}
+
+:root {
+  --font-size: 0.875rem;
+}

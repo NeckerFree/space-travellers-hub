@@ -1,0 +1,13 @@
+.app {
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  background-color: white;
+  margin-bottom: 2rem;
+}
+
+.main {
+  width: 100%;
+}
