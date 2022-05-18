@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 
-import rockets from './rockets/rockets';
-import missions from './missions/missions';
-import dragons from './dragons/dragons';
+import rockets from './rockets/rocket';
+import missions from './missions/mission';
+import dragons from './dragons/dragon';
 import loading from './shared/loading';
 import middleware from './middleware';
 
