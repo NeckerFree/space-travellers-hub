@@ -5,7 +5,6 @@
 
 .body {
   position: relative;
-  /* background-color: rgb(240, 240, 240); */
 }
 
 .offscreen {
@@ -21,10 +20,5 @@
 
 .appwidth {
   width: 93%;
-  /* max-width: 1400px; */
   margin: 0 auto;
-}
-
-:root {
-  /* --font-size: 0.875rem; */
 }
