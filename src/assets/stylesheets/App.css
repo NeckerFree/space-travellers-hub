@@ -4,10 +4,107 @@
 
 .header {
   width: 100%;
-  background-color: white;
+  /* background-color: white; */
   margin-bottom: 2rem;
 }
 
 .main {
   width: 100%;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #000;
+}
+
+.nav-title {
+  font-size: 1.875rem;
+  padding-left: 1.3rem;
+  color: purple;
+  /* font-weight: 800; */
+}
+
+.nav-links {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: blue;
+}
+
+.nav-link:nth-child(1) {
+  padding-right: 1rem;
+}
+
+.nav-link:nth-child(2) {
+  padding: 0 1rem;
+  border-left: 1px solid #000;
+}
+
+.nav-link:nth-child(3) {
+  padding: 0 1rem;
+  border-left: 1px solid #000;
+}
+
+.nav-link:nth-child(4) {
+  padding-left: 1rem;
+  border-left: 1px solid #000;
+}
+
+.nav-link:hover {
+  color: black;
+}
+
+.nav-link:active {
+  text-decoration: underline;
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+   width: 50px;
+}
+
+.logo-pic {
+  width: 100%;
+}
+
+.rockets {
+  /* margin-bottom: 2.2rem; */
+}
+
+.rocket {
+  display: flex;
+  margin-bottom: 2.2rem;
+}
+
+.rocket-img {
+  width: 200px;
+}
+
+.rocket-info {
+  padding-left: 2rem;
+}
+
+.rocket-name {
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.rocket-description {
+  padding-bottom: 1rem;
+}
+
+.rocket-reserve-button {
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: rgb(91, 91, 192);
+  color: white
 }
