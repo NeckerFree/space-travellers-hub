@@ -102,6 +102,7 @@
   background-color: rgb(91, 91, 192);
   color: white;
 }
+
 .active {
   text-decoration: underline;
 }
