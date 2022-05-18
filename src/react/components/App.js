@@ -8,18 +8,17 @@ import Navigation from './Navigation';
 import ConnectedRockets from './Rockets';
 import ConnectedMissions from './Missions';
 import ConnectedDragons from './Dragons';
+import MyProfile from './MyProfile';
 import handleInitialData from '../../redux/shared/receivedata';
 
 const App = () => {
-  const state = useSelector((state) => state);
-  const dispatch = useDispatch();
+  const state = useSelector((state) => state); const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(handleInitialData());
   }, []);
 
-  const { loading } = state;
-  if (loading === true) {
+  const { loading } = state; if (loading === true) {
     return (
       <div className="loading">
         <div className="loader"><CircularProgress /></div>
@@ -38,6 +37,7 @@ const App = () => {
           <Route exact path="/" element={<ConnectedRockets />} />
           <Route path="missions" element={<ConnectedMissions />} />
           <Route path="dragons" element={<ConnectedDragons />} />
+          <Route path="myprofile" element={<MyProfile />} />
         </Routes>
       </div>
     </div>

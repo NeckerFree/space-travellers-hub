@@ -5,7 +5,7 @@ import logo from '../../assets/images/planet.png';
 const Navigation = () => {
   const [navContent] = useState({
     logotext: 'Space Travelers\' Hub',
-    links: ['Rockets', 'Missions', 'Dragons', 'My Profile'],
+    links: ['Rockets', 'Missions', 'Dragons', 'MyProfile'],
   });
 
   return (

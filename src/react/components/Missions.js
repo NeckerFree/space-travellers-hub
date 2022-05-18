@@ -1,17 +1,44 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
+import React from 'react';
+import Mission from './Mission';
 
 const Missions = () => {
-  const missions = useSelector((state) => state.missions);
+  const missionsCollection = useSelector((state) => state.missions);
+  let alternative = true;
   return (
-    <div className="missions appwidth" data-testid="missions-a">
-      <div className="missionss">
-        {missions.map((mission) => (
-          <div key={mission.mission_id}>{mission.mission_name}</div>
-        ))}
-      </div>
-    </div>
+    <section className="missionsContainer" data-testid="missions-a">
+      <section className="missionHeader">
+        <div className="mission cell">
+          <p>Mission</p>
+        </div>
+        <div className="missionDescription cell">
+          <p>Description</p>
+        </div>
+        <div className="missionStatus cell">
+          <p>Status</p>
+        </div>
+        <div className="missionButton cell">
+          <p>   </p>
+        </div>
+      </section>
+      {
+        missionsCollection.map((mission) => {
+          alternative = !alternative;
+          return (
+            <div key={mission.mission_name}>
+              <Mission
+                id={mission.mission_id}
+                name={mission.mission_name}
+                description={mission.description}
+                classType={(alternative) ? 'normal' : 'alternative'}
+                status="NOT A MEMBER"
+              />
+            </div>
+          );
+        })
+      }
+    </section>
+
   );
 };
-
 export default Missions;

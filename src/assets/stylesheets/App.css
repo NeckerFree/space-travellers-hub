@@ -104,6 +104,10 @@
   color: white;
 }
 
+.active {
+  text-decoration: underline;
+}
+
 .rocket-reserve-button-true {
   padding: 0.5rem;
   border-radius: 5px;
