@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato');
 .html {
   font-size: 87.5%;
   scroll-behavior: smooth;
@@ -21,4 +22,57 @@
 .appwidth {
   width: 93%;
   margin: 0 auto;
+}
+* {
+  --app_gray_border: #dddddd;
+  --app_gray_container: #f2f2f2
+}
+/* Missions */
+.missionsContainer {  
+  margin:10px 50px;
+}
+
+.missionRow > .alternative{
+  display: flex;  
+  width: 100%;
+}
+
+.missionRow > .normal{
+  display: flex;  
+  width: 100%;
+}
+.missionHeader{
+  display: flex;  
+  font-weight: bold;
+
+}
+.mission {
+  width: 13%;
+  font-weight: bold;
+  
+}
+
+.missionDescription {
+  width: 61%;
+  
+}
+.missionStatus {
+  width: 13%;
+  
+}
+.missionStatus {
+  width: 13%;
+  
+}
+.cell{
+  border: 1px solid var(--app_gray_border);
+  padding: 5px;
+}
+.alternative{
+  background-color: var(--app_gray_container);
+}
+
+/* My Profile */
+.profileSection{
+  margin:10px 50px;
 }
