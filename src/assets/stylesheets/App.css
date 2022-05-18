@@ -89,11 +89,12 @@
 
 .rocket-name {
   font-size: 1.5rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 .rocket-description {
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  line-height: 20px;
 }
 
 .rocket-reserve-button {
@@ -105,4 +106,20 @@
 
 .active {
   text-decoration: underline;
+}
+
+.rocket-reserve-button-true {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid grey;
+  color: initial;
+}
+
+.reserved-label {
+  color: white;
+  background-color: rgb(24, 75, 75);
+  font-size: 0.875rem;
+  padding: 0.2rem;
+  border-radius: 5px;
+  margin-right: 1rem;
 }
