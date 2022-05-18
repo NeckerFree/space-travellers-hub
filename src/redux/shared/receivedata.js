@@ -20,7 +20,12 @@ function handleInitialData() {
     API.getAllDragons(),
   ])
     .then(([rockets, missions, dragons]) => {
-      dispatch(receiveData(rockets, missions, dragons));
+      const reserved = { reserved: false };
+      const modifiedRockets = rockets.map((rocket) => {
+        const modifiedRocket = { ...rocket, ...reserved };
+        return modifiedRocket;
+      });
+      dispatch(receiveData(modifiedRockets, missions, dragons));
     })
     .catch(() => {
       showConnectionError();
