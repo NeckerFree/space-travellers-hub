@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import '../../assets/stylesheets/App.css';
-// import CircularProgress from '@mui/material/CircularProgress';
+import CircularProgress from '@mui/material/CircularProgress';
 import Navigation from './Navigation';
 import ConnectedRockets from './Rockets';
 import ConnectedMissions from './Missions';
@@ -22,8 +22,7 @@ const App = () => {
   if (loading === true) {
     return (
       <div className="loading">
-        loading...
-        {/* <div className="loader"><CircularProgress /></div> */}
+        <div className="loader"><CircularProgress /></div>
       </div>
     );
   }
