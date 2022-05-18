@@ -22,9 +22,10 @@ function handleInitialData() {
     .then(([rockets, missions, dragons]) => {
       const reserved = { reserved: false };
       const modifiedRockets = rockets.map((rocket) => {
-        const modifiedRocket = { ...rocket, ...reserved };
-        return modifiedRocket;
+        const nr = { ...rocket, ...reserved };
+        return nr;
       });
+
       dispatch(receiveData(modifiedRockets, missions, dragons));
     })
     .catch(() => {
