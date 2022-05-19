@@ -44,8 +44,8 @@ const MyProfile = () => {
           {profileSection === profileSections[2] && (
             <section className="profileItemDiv">
               {joinedDragons.map((dragon) => (
-                <div key={dragon}>
-                  <p className="profileitem">{dragon}</p>
+                <div key={dragon.id}>
+                  <p className="profileitem">{dragon.name}</p>
                 </div>
               ))}
             </section>
