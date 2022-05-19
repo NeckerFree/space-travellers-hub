@@ -175,7 +175,57 @@
   padding: 5px;
 }
 
+/* Missions */
+.missionsContainer {
+  margin: 10px 50px;
+}
+
+.alternative {
+  background-color: var(--app_gray_container);
+}
+
+.missionRow > .alternative {
+  display: flex;
+  width: 100%;
+}
+
+.missionRow > .normal {
+  display: flex;
+  width: 100%;
+}
+
+.missionHeader {
+  display: flex;
+  font-weight: bold;
+}
+
+.mission {
+  width: 13%;
+  font-weight: bold;
+}
+
+.missionDescription {
+  width: 61%;
+}
+
+.missionStatus {
+  width: 13%;
+}
+
+.cell {
+  border: 1px solid var(--app_gray_border);
+  padding: 5px;
+}
+
 /* My Profile */
 .profileSection {
   margin: 10px 50px;
+}
+
+.profileContainer {
+  margin: 10px 50px;
+}
+
+.profileContainer > p {
+  font-weight: bold;
 }

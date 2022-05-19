@@ -24,3 +24,8 @@
   width: 93%;
   margin: 0 auto;
 }
+
+* {
+  --app_gray_border: #ddd;
+  --app_gray_container: #f2f2f2;
+}

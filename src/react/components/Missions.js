@@ -39,7 +39,7 @@ const Missions = () => {
           <p>Status</p>
         </div>
         <div className="missionButton cell">
-          <p>   </p>
+          <p>Test</p>
         </div>
       </section>
       {
@@ -52,14 +52,14 @@ const Missions = () => {
                 name={mission.mission_name}
                 description={mission.description}
                 classType={(alternative) ? 'normal' : 'alternative'}
-                status="NOT A MEMBER"
+                status={(mission.reserved) ? 'Active Member' : 'NOT A MEMBER'}
+                reserved={mission.reserved}
               />
             </div>
           );
         })
       }
     </section>
-
   );
 };
 export default Missions;
