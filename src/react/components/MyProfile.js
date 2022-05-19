@@ -17,35 +17,35 @@ const MyProfile = () => {
   return (
     <section className="profileContainer">
       {profileSections.map((profileSection) => (
-        <div key={profileSection} className={`${profileSection.toLowerCase()}profile`}>
-          <p className="">
+        <div key={profileSection} className={`${profileSection.toLowerCase()}profile profileDiv`}>
+          <p className="profiletitle">
             My
             {`${' '}`}
             {profileSection}
           </p>
           {profileSection === profileSections[0] && (
-            <section>
+            <section className="profileItemDiv">
               {joinedRockets.map((rocket) => (
                 <div key={rocket.id}>
-                  <p>{rocket.rocket_name}</p>
+                  <p className="profileitem">{rocket.rocket_name}</p>
                 </div>
               ))}
             </section>
           )}
           {profileSection === profileSections[1] && (
-            <section>
+            <section className="profileItemDiv">
               {joinedMissions.map((mission) => (
                 <div key={mission.mission_id}>
-                  <p>{mission.mission_name}</p>
+                  <p className="profileitem">{mission.mission_name}</p>
                 </div>
               ))}
             </section>
           )}
           {profileSection === profileSections[2] && (
-            <section>
+            <section className="profileItemDiv">
               {joinedDragons.map((dragon) => (
                 <div key={dragon}>
-                  <p>{dragon}</p>
+                  <p className="profileitem">{dragon}</p>
                 </div>
               ))}
             </section>
