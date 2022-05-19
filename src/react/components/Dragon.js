@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { handleJoinMission } from '../../redux/missions/mission';
+import { handleJoinDragon } from '../../redux/dragons/dragon';
 
-const Mission = (props) => {
+const Dragon = (props) => {
   const {
     id, name, description, classType, status, reserved,
   } = props;
 
   const dispatch = useDispatch();
 
-  const joinMission = (event) => {
-    dispatch(handleJoinMission(event.target.id));
+  const joinDragon = (event) => {
+    dispatch(handleJoinDragon(event.target.id));
   };
 
   return (
@@ -34,16 +34,17 @@ const Mission = (props) => {
           <input
             id={id}
             type="submit"
-            value={reserved ? 'Leave Mission' : 'Join Mission'}
+            value={reserved ? 'Leave Dragon' : 'Join Dragon'}
             className={reserved ? 'mission-reserve-button-true' : 'mission-reserve-button'}
-            onClick={joinMission}
+            onClick={joinDragon}
           />
         </div>
       </section>
     </section>
   );
 };
-Mission.propTypes = {
+
+Dragon.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
@@ -51,4 +52,5 @@ Mission.propTypes = {
   status: PropTypes.string.isRequired,
   reserved: PropTypes.bool.isRequired,
 };
-export default Mission;
+
+export default Dragon;
