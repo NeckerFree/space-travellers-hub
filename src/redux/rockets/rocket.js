@@ -1,4 +1,3 @@
-// import RECEIVE_DATA from '../shared/actions';
 import showConnectionError from '../shared/error';
 import * as API from '../shared/api';
 
