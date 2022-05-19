@@ -170,6 +170,20 @@
   padding: 5px;
 }
 
+.mission-reserve-button {
+  color: rgb(95, 94, 94);
+  border: 1px solid rgb(95, 94, 94);
+  border-radius: 5px;
+  padding: 0.4rem;
+}
+
+.mission-reserve-button-true {
+  color: red;
+  border: 1px solid red;
+  border-radius: 5px;
+  padding: 0.4rem;
+}
+
 /* My Profile */
 .profileSection {
   margin: 10px 50px;
@@ -207,4 +221,18 @@
 
 .profileItemDiv {
   border-bottom: 1px solid rgb(215, 213, 213);
+}
+
+.mission-reserve-status {
+  background-color: grey;
+  color: white;
+  padding: 0.3rem;
+  border-radius: 5px;
+}
+
+.mission-reserve-status-true {
+  background-color: rgb(24, 75, 75);
+  color: white;
+  border-radius: 5px;
+  padding: 0.3rem;
 }

@@ -24,10 +24,20 @@ const Mission = (props) => {
           <p>{description}</p>
         </div>
         <div className="missionStatus cell">
-          <p>{status}</p>
+          <p
+            className={reserved ? 'mission-reserve-status-true' : 'mission-reserve-status'}
+          >
+            {status}
+          </p>
         </div>
         <div className="missionButton cell">
-          <input id={id} type="submit" value={reserved ? 'Leave Mission' : 'Join Mission'} onClick={joinMission} />
+          <input
+            id={id}
+            type="submit"
+            value={reserved ? 'Leave Mission' : 'Join Mission'}
+            className={reserved ? 'mission-reserve-button-true' : 'mission-reserve-button'}
+            onClick={joinMission}
+          />
         </div>
       </section>
     </section>
