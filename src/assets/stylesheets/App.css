@@ -56,7 +56,7 @@
 }
 
 .nav-link:active {
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 .logo-group {
@@ -162,12 +162,22 @@
 }
 
 .missionStatus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 13%;
+}
+
+.missionButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 13%;
 }
 
 .cell {
   border: 1px solid var(--app_gray_border);
-  padding: 5px;
+  padding: 0.7rem;
 }
 
 .mission-reserve-button {
@@ -226,7 +236,7 @@
 .mission-reserve-status {
   background-color: grey;
   color: white;
-  padding: 0.3rem;
+  padding: 0.2rem;
   border-radius: 5px;
 }
 
@@ -234,5 +244,5 @@
   background-color: rgb(24, 75, 75);
   color: white;
   border-radius: 5px;
-  padding: 0.3rem;
+  padding: 0.2rem;
 }
