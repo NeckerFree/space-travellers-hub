@@ -21,7 +21,6 @@
 
 ## Live Demo
 
-[Live Demo]()
  - Coming Soon!
 
 ## Getting Started
