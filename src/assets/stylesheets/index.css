@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato');
 
+* {
+  --app_gray_border: #ddd;
+  --app_gray_container: #f2f2f2;
+}
+
 .html {
   font-size: 87.5%;
   scroll-behavior: smooth;
@@ -23,9 +28,4 @@
 .appwidth {
   width: 93%;
   margin: 0 auto;
-}
-
-* {
-  --app_gray_border: #ddd;
-  --app_gray_container: #f2f2f2;
 }
