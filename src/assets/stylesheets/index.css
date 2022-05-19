@@ -12,6 +12,7 @@
 
 .body {
   position: relative;
+  font-family: 'Lato', sans-serif;
 }
 
 .offscreen {
