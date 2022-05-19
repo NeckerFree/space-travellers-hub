@@ -1,10 +1,9 @@
-import RECEIVE_DATA from '../shared/actions';
-// import showConnectionError from '../shared/error';
+// import RECEIVE_DATA from '../shared/actions';
+import showConnectionError from '../shared/error';
+import * as API from '../shared/api';
 
 // actions
-// const ADD_BOOK = 'bookstore/books/ADD_BOOK';
-// const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
-// const TOGGLE_BOOK = 'bookstore/books/TOGGLE_BOOK';
+const RECEIVE_MISSIONS = 'spacetraveler/missions/RECEIVE_MISSIONS';
 
 // reducer
 export default function missions(state = [], action) {
@@ -26,7 +25,7 @@ export default function missions(state = [], action) {
     //     }
     //     return { ...book, complete: !book.complete };
     //   });
-    case RECEIVE_DATA:
+    case RECEIVE_MISSIONS:
       return action.missions;
     default:
       return state;
@@ -34,12 +33,12 @@ export default function missions(state = [], action) {
 }
 
 // action creators
-// function addBook(book) {
-//   return {
-//     type: ADD_BOOK,
-//     book,
-//   };
-// }
+function receiveMissions(missions) {
+  return {
+    type: RECEIVE_MISSIONS,
+    missions,
+  };
+}
 // function removeBook(id) {
 //   return {
 //     type: REMOVE_BOOK,
@@ -66,20 +65,19 @@ export default function missions(state = [], action) {
 //   };
 // }
 
-// export function handleDeleteBook(appid, book) {
-//   return (dispatch) => {
-//     dispatch(removeBook(book.id));
+export function handleReceiveMissions(missions) {
+  return (dispatch) => API.getAllMissions(missions)
+    .then((missions) => {
+      const reserved = { reserved: false };
+      const modifiedMissions = missions.map((mission) => {
+        const modifiedMission = { ...mission, ...reserved };
+        return modifiedMission;
+      });
 
-//     return deleteBook(appid, book)
-//       .catch(() => {
-//         showConnectionError();
-//         dispatch(addBook(book));
-//       });
-//   };
-// }
-
-// export function handleToggleBook(id) {
-//   return (dispatch) => {
-//     dispatch(toggleBook(id));
-//   };
-// }
+      dispatch(receiveMissions(modifiedMissions));
+    })
+    .catch((e) => {
+      console.log(e.message);
+      showConnectionError();
+    });
+}

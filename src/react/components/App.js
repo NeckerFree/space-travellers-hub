@@ -8,14 +8,14 @@ import Navigation from './Navigation';
 import ConnectedRockets from './Rockets';
 import ConnectedMissions from './Missions';
 import ConnectedDragons from './Dragons';
-import handleInitialData from '../../redux/shared/receivedata';
+import { handleReceiveRockets } from '../../redux/rockets/rocket';
 
 const App = () => {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(handleInitialData());
+    dispatch(handleReceiveRockets());
   }, []);
 
   const { loading } = state;

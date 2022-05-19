@@ -1,10 +1,9 @@
-import RECEIVE_DATA from '../shared/actions';
-// import showConnectionError from '../shared/error';
+// import RECEIVE_DATA from '../shared/actions';
+import showConnectionError from '../shared/error';
+import * as API from '../shared/api';
 
 // actions
-// const ADD_BOOK = 'bookstore/books/ADD_BOOK';
-// const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
-// const TOGGLE_BOOK = 'bookstore/books/TOGGLE_BOOK';
+const RECEIVE_DRAGONS = 'spacetraveler/dragons/RECEIVE_DRAGONS';
 
 // reducer
 export default function dragons(state = [], action) {
@@ -26,7 +25,7 @@ export default function dragons(state = [], action) {
     //     }
     //     return { ...book, complete: !book.complete };
     //   });
-    case RECEIVE_DATA:
+    case RECEIVE_DRAGONS:
       return action.dragons;
     default:
       return state;
@@ -34,12 +33,12 @@ export default function dragons(state = [], action) {
 }
 
 // action creators
-// function addBook(book) {
-//   return {
-//     type: ADD_BOOK,
-//     book,
-//   };
-// }
+function receiveDragons(dragons) {
+  return {
+    type: RECEIVE_DRAGONS,
+    dragons,
+  };
+}
 // function removeBook(id) {
 //   return {
 //     type: REMOVE_BOOK,
@@ -66,20 +65,19 @@ export default function dragons(state = [], action) {
 //   };
 // }
 
-// export function handleDeleteBook(appid, book) {
-//   return (dispatch) => {
-//     dispatch(removeBook(book.id));
+export function handleReceiveDragons(dragons) {
+  return (dispatch) => API.getAllDragons(dragons)
+    .then((dragons) => {
+      const reserved = { reserved: false };
+      const modifiedDragons = dragons.map((dragon) => {
+        const modifiedDragon = { ...dragon, ...reserved };
+        return modifiedDragon;
+      });
 
-//     return deleteBook(appid, book)
-//       .catch(() => {
-//         showConnectionError();
-//         dispatch(addBook(book));
-//       });
-//   };
-// }
-
-// export function handleToggleBook(id) {
-//   return (dispatch) => {
-//     dispatch(toggleBook(id));
-//   };
-// }
+      dispatch(receiveDragons(modifiedDragons));
+    })
+    .catch((e) => {
+      console.log(e.message);
+      showConnectionError();
+    });
+}
