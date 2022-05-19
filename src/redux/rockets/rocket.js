@@ -1,10 +1,9 @@
-import RECEIVE_DATA from '../shared/actions';
-// import showConnectionError from '../shared/error';
+import showConnectionError from '../shared/error';
+import * as API from '../shared/api';
 
 // actions
 const RESERVE_ROCKET = 'spacetraveler/rocket/RESERVE_ROCKET';
-// const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
-// const TOGGLE_BOOK = 'bookstore/books/TOGGLE_BOOK';
+const RECEIVE_ROCKETS = 'spacetraveler/rocket/RECEIVE_ROCKETS';
 
 // reducer
 export default function rockets(state = [], action) {
@@ -16,16 +15,7 @@ export default function rockets(state = [], action) {
         }
         return { ...rocket, reserved: !rocket.reserved };
       });
-    // case REMOVE_BOOK:
-    //   return state.filter((book) => book.id !== action.id);
-    // case TOGGLE_BOOK:
-    //   return state.map((book) => {
-    //     if (book.id !== action.id) {
-    //       return book;
-    //     }
-    //     return { ...book, complete: !book.complete };
-    //   });
-    case RECEIVE_DATA:
+    case RECEIVE_ROCKETS:
       return action.rockets;
     default:
       return state;
@@ -39,46 +29,32 @@ function reserveRocket(id) {
     id,
   };
 }
-// function removeBook(id) {
-//   return {
-//     type: REMOVE_BOOK,
-//     id,
-//   };
-// }
-// function toggleBook(id) {
-//   return {
-//     type: TOGGLE_BOOK,
-//     id,
-//   };
-// }
+function receiveRockets(rockets) {
+  return {
+    type: RECEIVE_ROCKETS,
+    rockets,
+  };
+}
 
 // Thunk action creators
 export function handleReserveRocket(rocket) {
   return (dispatch) => {
     dispatch(reserveRocket(rocket.id));
-
-    // return createBook(appid, bookobj)
-    //   .catch(() => {
-    //     showConnectionError();
-    //     dispatch(removeBook(bookobj.id));
-    //   });
   };
 }
 
-// export function handleDeleteBook(appid, book) {
-//   return (dispatch) => {
-//     dispatch(removeBook(book.id));
+export function handleReceiveRockets(rockets) {
+  return (dispatch) => API.getAllRockets(rockets)
+    .then((rockets) => {
+      const reserved = { reserved: false };
+      const modifiedRockets = rockets.map((rocket) => {
+        const modifiedRocket = { ...rocket, ...reserved };
+        return modifiedRocket;
+      });
 
-//     return deleteBook(appid, book)
-//       .catch(() => {
-//         showConnectionError();
-//         dispatch(addBook(book));
-//       });
-//   };
-// }
-
-// export function handleToggleBook(id) {
-//   return (dispatch) => {
-//     dispatch(toggleBook(id));
-//   };
-// }
+      dispatch(receiveRockets(modifiedRockets));
+    })
+    .catch(() => {
+      showConnectionError();
+    });
+}

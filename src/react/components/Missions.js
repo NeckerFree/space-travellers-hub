@@ -1,10 +1,31 @@
-import { useSelector } from 'react-redux';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import CircularProgress from '@mui/material/CircularProgress';
 import Mission from './Mission';
+import { handleReceiveMissions } from '../../redux/missions/mission';
 
 const Missions = () => {
+  const state = useSelector((state) => state);
   const missionsCollection = useSelector((state) => state.missions);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (missionsCollection.length === 0) {
+      dispatch(handleReceiveMissions());
+    }
+  }, [missionsCollection]);
+
+  const { loading } = state;
+  if (loading === true) {
+    return (
+      <div className="loading">
+        <div className="loader"><CircularProgress /></div>
+      </div>
+    );
+  }
+
   let alternative = true;
+
   return (
     <section className="missionsContainer" data-testid="missions-a">
       <section className="missionHeader">
