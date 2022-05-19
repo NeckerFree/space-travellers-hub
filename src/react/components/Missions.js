@@ -3,8 +3,9 @@ import React from 'react';
 import Mission from './Mission';
 
 const Missions = () => {
-  const missionsCollection = useSelector((state) => state.missions);
+  const missions = useSelector((state) => state.missions);
   let alternative = true;
+
   return (
     <section className="missionsContainer" data-testid="missions-a">
       <section className="missionHeader">
@@ -18,11 +19,11 @@ const Missions = () => {
           <p>Status</p>
         </div>
         <div className="missionButton cell">
-          <p>   </p>
+          <p>Test</p>
         </div>
       </section>
       {
-        missionsCollection.map((mission) => {
+        missions.map((mission) => {
           alternative = !alternative;
           return (
             <div key={mission.mission_name}>
@@ -31,14 +32,14 @@ const Missions = () => {
                 name={mission.mission_name}
                 description={mission.description}
                 classType={(alternative) ? 'normal' : 'alternative'}
-                status="NOT A MEMBER"
+                status={(mission.reserved) ? 'Active Member' : 'NOT A MEMBER'}
+                reserved={mission.reserved}
               />
             </div>
           );
         })
       }
     </section>
-
   );
 };
 export default Missions;

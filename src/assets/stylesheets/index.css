@@ -73,6 +73,10 @@
 }
 
 /* My Profile */
-.profileSection {
+.profileContainer {
   margin: 10px 50px;
+}
+
+.profileContainer > p{
+  font-weight: bold;
 }

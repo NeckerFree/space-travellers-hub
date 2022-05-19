@@ -25,8 +25,12 @@ function handleInitialData() {
         const modifiedRocket = { ...rocket, ...reserved };
         return modifiedRocket;
       });
+      const modifiedMissions = missions.map((mission) => {
+        const modifiedMission = { ...mission, ...reserved };
+        return modifiedMission;
+      });
 
-      dispatch(receiveData(modifiedRockets, missions, dragons));
+      dispatch(receiveData(modifiedRockets, modifiedMissions, dragons));
     })
     .catch(() => {
       showConnectionError();
