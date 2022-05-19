@@ -56,7 +56,7 @@
 }
 
 .nav-link:active {
-  /* text-decoration: underline; */
+  text-decoration: underline;
 }
 
 .logo-group {
@@ -202,7 +202,6 @@
 .profileContainer {
   margin: 10px 50px;
   display: flex;
-  /* justify-content: space-between; */
 }
 
 .profileContainer > p {
@@ -213,7 +212,7 @@
   width: 30%;
 }
 
-.profileDiv:nth-child(2){
+.profileDiv:nth-child(2) {
   margin: 0 5%;
 }
 
