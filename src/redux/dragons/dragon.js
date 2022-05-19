@@ -30,7 +30,7 @@ function receiveDragons(dragons) {
   };
 }
 
-function joinDragon(id) {
+export function joinDragon(id) {
   return {
     type: JOIN_DRAGON,
     id,

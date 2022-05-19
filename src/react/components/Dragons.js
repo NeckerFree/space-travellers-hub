@@ -27,8 +27,8 @@ const Dragons = () => {
   let alternative = true;
 
   return (
-    <section className="missionsContainer" data-testid="missions-a">
-      <section className="missionHeader">
+    <section className="missionsContainer" data-testid="dragons-a">
+      <section className="dragonHeader">
         <div className="mission cell">
           <p>Dragon</p>
         </div>

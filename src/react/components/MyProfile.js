@@ -15,7 +15,7 @@ const MyProfile = () => {
   const joinedDragons = dragons.filter((dragon) => dragon.reserved === true);
 
   return (
-    <section className="profileContainer">
+    <section className="profileContainer" data-testid="myprofile-a">
       {profileSections.map((profileSection) => (
         <div key={profileSection} className={`${profileSection.toLowerCase()}profile profileDiv`}>
           <p className="profiletitle">

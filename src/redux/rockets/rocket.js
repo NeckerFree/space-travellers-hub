@@ -23,7 +23,7 @@ export default function rockets(state = [], action) {
 }
 
 // action creators
-function reserveRocket(id) {
+export function reserveRocket(id) {
   return {
     type: RESERVE_ROCKET,
     id,
