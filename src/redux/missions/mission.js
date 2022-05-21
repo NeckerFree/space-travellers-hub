@@ -30,7 +30,7 @@ function receiveMissions(missions) {
   };
 }
 
-function joinMission(id) {
+export function joinMission(id) {
   return {
     type: JOIN_MISSION,
     id,

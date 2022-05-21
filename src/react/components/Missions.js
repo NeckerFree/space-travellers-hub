@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import CircularProgress from '@mui/material/CircularProgress';
 import Mission from './Mission';
 import { handleReceiveMissions } from '../../redux/missions/mission';
 
 const Missions = () => {
-  const state = useSelector((state) => state);
   const missionsCollection = useSelector((state) => state.missions);
   const dispatch = useDispatch();
 
@@ -14,15 +12,6 @@ const Missions = () => {
       dispatch(handleReceiveMissions());
     }
   }, [missionsCollection]);
-
-  const { loading } = state;
-  if (loading === true) {
-    return (
-      <div className="loading">
-        <div className="loader"><CircularProgress /></div>
-      </div>
-    );
-  }
 
   let alternative = true;
 

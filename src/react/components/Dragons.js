@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import CircularProgress from '@mui/material/CircularProgress';
 import Dragon from './Dragon';
 import { handleReceiveDragons } from '../../redux/dragons/dragon';
 
 const Dragons = () => {
-  const state = useSelector((state) => state);
   const dragonsCollection = useSelector((state) => state.dragons);
   const dispatch = useDispatch();
 
@@ -15,20 +13,11 @@ const Dragons = () => {
     }
   }, [dragonsCollection]);
 
-  const { loading } = state;
-  if (loading === true) {
-    return (
-      <div className="loading">
-        <div className="loader"><CircularProgress /></div>
-      </div>
-    );
-  }
-
   let alternative = true;
 
   return (
-    <section className="missionsContainer" data-testid="missions-a">
-      <section className="missionHeader">
+    <section className="missionsContainer" data-testid="dragons-a">
+      <section className="dragonHeader">
         <div className="mission cell">
           <p>Dragon</p>
         </div>
