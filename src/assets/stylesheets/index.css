@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato');
+
+* {
+  --app_gray_border: #ddd;
+  --app_gray_container: #f2f2f2;
+}
+
+.html {
+  font-size: 87.5%;
+  scroll-behavior: smooth;
+}
+
+.body {
+  position: relative;
+  font-family: 'Lato', sans-serif;
+}
+
+.offscreen {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.appwidth {
+  width: 93%;
+  margin: 0 auto;
+}

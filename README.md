@@ -1,72 +1,75 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+[](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Space Travellers Hub
 
-> Description the project.
+> Real live data from the SpaceX API, this is a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
 
+# Screenshots
+
+<img src="./src/assets/images/Screenshot 2022-05-19 at 5.01.45 PM.png">
+<img src="./src/assets/images/Screenshot 2022-05-19 at 5.00.59 PM.png">
+<img src="./src/assets/images/Screenshot 2022-05-19 at 4.59.53 PM.png">
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Technologies used:
+  - React
+  - Html
+  - CSS
+  - Jest
+  - Redux
 
-## Live Demo (if available)
+## Live Demo
 
-[Live Demo Link](https://livedemo.com)
-
+ - Coming Soon!
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+To get a local copy up and running follow this simple step:
 
+- Clone repository to your local machine: `https://github.com/NeckerFree/space-travellers-hub.git`
+- Run `git checkout myprofile`
+- Run `npm install` to install dependencies
+- Run `npm start` to start the server
 
-To get a local copy up and running follow these simple example steps.
+## Testing
 
-### Prerequisites
+To get a local copy up and running follow this simple step:
 
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+- Clone repository to your local machine: `https://github.com/NeckerFree/space-travellers-hub.git`
+- Run `git checkout test` to switch to test branch
+- Run `npm install` to install dependencies
+- Run `npm run test` to run test
 
 ## Authors
 
-👤 **Author1**
+👤 **Elio Cortés**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@NeckerFree](https://github.com/NeckerFree)
+- Twitter: [@ElioCortesM](https://twitter.com/ElioCortesM)
+- LinkedIn: [elionelsoncortes](https://www.linkedin.com/in/elionelsoncortes/)
 
-👤 **Author2**
+👤 **Godwin Nwachukwu**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@gnwin](https://github.com/Gnwin)
+- Twitter: [@gmarxr](https://twitter.com/gmarxr)
+- LinkedIn: [@Godwin](http://www.linkedin.com/in/n-gwin)
+
+👤 **Juda**
+
+- GitHub: [@juda](https://github.com/mrjuda)
+- Twitter: [@juda](https://twitter.com/judalabs)
+- LinkedIn: [@juda](https://linkedin.com/in/judateixeira)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/NeckerFree/space-travellers-hub/issues).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 ## 📝 License
 
